@@ -39,9 +39,7 @@ def get_filters():
         print("Oops, your entry is not valid.")
         day = input("Please enter a day of week - Monday, Tuesday, Wednesday... or type 'all':\n").lower()
 
-
-    print('-' * 40)
-
+    print('-' * 30)
     return city, month, day
 
 
@@ -56,7 +54,6 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-
     df = pd.read_csv(CITY_DATA[city])
 
     # converting start time to date time
@@ -100,7 +97,7 @@ def time_stats(df):
     print("Most common start hour: {}".format(df['hour'].mode()[0]))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'* 30)
 
 
 def station_stats(df):
@@ -120,7 +117,7 @@ def station_stats(df):
           .format(df.groupby(['Start Station', 'End Station']).size().idxmax()))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'* 30)
 
 
 def trip_duration_stats(df):
@@ -136,7 +133,7 @@ def trip_duration_stats(df):
     print("Average travel time: around {} minutes".format(df['Trip Duration'].mean() // 60))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'* 30)
 
 
 def user_stats(df, city):
@@ -158,7 +155,7 @@ def user_stats(df, city):
         print("The most recent year of birth of the user: {}".format(int(df['Birth Year'].max())))
         print("The most common year of birth of the user: {}".format(int(df['Birth Year'].mode()[0])))
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'* 30)
 
 def raw_data(df):
     data = input("Do you want to see a Raw Data? Type 'yes' or 'no':\n")
