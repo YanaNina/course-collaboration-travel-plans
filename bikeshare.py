@@ -37,7 +37,7 @@ def get_filters():
     days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']
     while day not in days:
         print("Oops, your entry is not valid.")
-        day = input("Please enter a day of week - Monday, Tuesday, ... Sunday or type 'all':\n").lower()
+        day = input("Please enter a day of week - Monday, Tuesday, Wednesday... or type 'all':\n").lower()
 
 
     print('-' * 40)
