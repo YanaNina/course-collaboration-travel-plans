@@ -39,9 +39,7 @@ def get_filters():
         print("Oops, your entry is not valid.")
         day = input("Please enter a day of week - Monday, Tuesday, ... Sunday or type 'all':\n").lower()
 
-
     print('-' * 30)
-
     return city, month, day
 
 
@@ -56,7 +54,6 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-
     df = pd.read_csv(CITY_DATA[city])
 
     # converting start time to date time
